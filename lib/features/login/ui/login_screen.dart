@@ -1,3 +1,5 @@
+import 'package:doc/features/login/ui/widgets/already_have_account_text.dart';
+import 'package:doc/features/login/ui/widgets/terms_and_conditions_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/helpers/spacing_extension.dart';
@@ -74,7 +76,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         onPressed: () {},
                       ),
                       verticalSpace(16),
-
+                      const TermsAndConditionsText(),
+                      verticalSpace(60),
+                      const AlreadyHaveAccountText(),
                     ],
                   ),
                 ),

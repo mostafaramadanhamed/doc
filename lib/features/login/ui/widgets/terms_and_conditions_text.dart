@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theming/text_styles.dart';
 
-class AlreadyHaveAccountText extends StatelessWidget {
-  const AlreadyHaveAccountText({super.key});
+class TermsAndConditionsText extends StatelessWidget {
+  const TermsAndConditionsText({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +12,20 @@ class AlreadyHaveAccountText extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-            text: 'Already have an account?',
-            style: TextStyles.font13DarkBlueRegular,
+            text: 'By logging, you agree to our',
+            style: TextStyles.font13GrayRegular,
           ),
           TextSpan(
-            text: ' Sign Up',
-            style: TextStyles.font13BlueSemiBold,
+            text: ' Terms & Conditions',
+            style: TextStyles.font13DarkBlueMedium,
+          ),
+          TextSpan(
+            text: ' and',
+            style: TextStyles.font13GrayRegular.copyWith(height: 1.5),
+          ),
+          TextSpan(
+            text: ' Privacy Policy',
+            style: TextStyles.font13DarkBlueMedium,
           ),
         ],
       ),
