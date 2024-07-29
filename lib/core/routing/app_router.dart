@@ -1,5 +1,6 @@
 import 'package:doc/core/di/dependency_injection.dart';
 import 'package:doc/core/routing/routes.dart';
+import 'package:doc/features/home/ui/home_screen.dart';
 import 'package:doc/features/login/logic/login_cubit.dart';
 import 'package:doc/features/login/ui/login_screen.dart';
 import 'package:doc/features/onboarding/ui/onboarding_screen.dart';
@@ -24,7 +25,7 @@ class AppRouter {
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => const Placeholder(),
+          builder: (_) => const HomeScreen(),
         );
       default:
         return MaterialPageRoute(
