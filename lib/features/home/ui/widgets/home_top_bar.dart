@@ -1,5 +1,6 @@
 import 'package:doc/core/theming/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/theming/text_styles.dart';
 
@@ -21,10 +22,10 @@ class HomeTopBar extends StatelessWidget {
         ),
 
         const Spacer(),
-        const CircleAvatar(
+         CircleAvatar(
           radius: 24,
-          backgroundImage: AssetImage('assets/svgs/notifications.svg'),
           backgroundColor: ColorsManager.moreLighterGray,
+          child:SvgPicture.asset('assets/svgs/notifications.svg',),
         )
       ],
     );
