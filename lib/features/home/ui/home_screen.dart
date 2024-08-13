@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/helpers/spacing_extension.dart';
+import 'widgets/doctor_specialty_list_view.dart';
 import 'widgets/doctor_specialty_see_all.dart';
 import 'widgets/doctors_blue_screen.dart';
+import 'widgets/doctors_list_view.dart';
 import 'widgets/home_top_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,10 +21,14 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children:  [ 
-          const HomeTopBar(),
+              const HomeTopBar(),
               const DoctorsBlueContainer(),
               verticalSpace(24),
               const DoctorSpecialtySeeAll(),
+              verticalSpace(18),
+              const DoctorsSpecialityListView(),
+              verticalSpace(8),
+              const DoctorsListView(),
             ],
           ),
         ),
