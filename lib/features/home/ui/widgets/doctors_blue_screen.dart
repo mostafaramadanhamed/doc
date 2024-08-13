@@ -23,7 +23,7 @@ class DoctorsBlueContainer extends StatelessWidget {
             decoration:  BoxDecoration(
               borderRadius: BorderRadius.circular(24.0),
               image: const DecorationImage(
-                image: AssetImage('assets/images/home_blue_container.png'),
+                image: AssetImage('assets/images/home_blue_pattern.png'),
                 fit: BoxFit.cover
               ),
             ),
@@ -35,7 +35,7 @@ class DoctorsBlueContainer extends StatelessWidget {
                   style: TextStyles.font18WhiteMedium,
                   textAlign: TextAlign.start,
                 ),    
-                verticalSpace(16),
+                verticalSpace(32),
                 Expanded(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -52,9 +52,9 @@ class DoctorsBlueContainer extends StatelessWidget {
           ),
 
           Positioned(
-            right: 16,
+            right: 8.w ,
             top: 0,
-            child:  Image.asset( 'assets/images/home_doctor.png',),
+            child:  Image.asset( 'assets/images/home_doctor.png',height: 200.h,),
           ),
         ],
       ),
