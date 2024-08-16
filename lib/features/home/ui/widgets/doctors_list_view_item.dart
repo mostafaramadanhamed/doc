@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,15 +20,24 @@ class DoctorsListViewItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 16.h),
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12.0),
-            child: Image.network(
-              width: 110.w,
-              height: 120.h,
-              doctorsModel!.photo ?? 'https://via.placeholder.com/150',
-              fit: BoxFit.cover
-            ),
+          CachedNetworkImage(
+            width: 110.w,
+            height: 120.h,
+            imageUrl:  doctorsModel!.photo ?? 'https://via.placeholder.com/150',
+            fit: BoxFit.cover,
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                CircularProgressIndicator(value: downloadProgress.progress),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
+          // ClipRRect(
+          //   borderRadius: BorderRadius.circular(12.0),
+          //   child: CachedNetworkImage(
+          //     width: 110.w,
+          //     height: 120.h,
+          //   imageUrl:  doctorsModel!.photo ?? 'https://via.placeholder.com/150',
+          //     fit: BoxFit.cover
+          //   ),
+          // ),
           horizontalSpace(16),
           Expanded(
             child: Column(
