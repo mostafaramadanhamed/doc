@@ -1,8 +1,6 @@
-import 'package:doc/core/helpers/spacing_extension.dart';
+import '../../../../core/helpers/spacing_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/text_styles.dart';
 
 class DoctorsBlueContainer extends StatelessWidget {
