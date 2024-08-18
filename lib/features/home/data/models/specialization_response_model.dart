@@ -25,7 +25,7 @@ class SpecializationData {
     this.name,
     this.doctorsList,
   });
-  factory SpecializationData.frmJson(Map<String, dynamic> json) =>
+  factory SpecializationData.fromJson(Map<String, dynamic> json) =>
       _$SpecializationDataFromJson(json);
 }
 
