@@ -1,4 +1,4 @@
-import 'package:doc/core/helpers/routing_extension.dart';
+import 'package:doc/core/helpers/extensions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/routing/routes.dart';
