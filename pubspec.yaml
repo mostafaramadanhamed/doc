@@ -50,6 +50,10 @@ dependencies:
   retrofit_generator: ^8.0.4
   # flutter library to load and cache images
   cached_network_image: ^3.2.3
+  # flutter library to save local data
+  shared_preferences: ^2.1.0
+  # flutter library to secure storage
+  flutter_secure_storage: ^7.0.1
 dev_dependencies:
 
   # The "flutter_lints" package below contains a set of recommended lints to
