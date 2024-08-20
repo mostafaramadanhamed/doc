@@ -1,3 +1,3 @@
-class SharedprefConstants {
+class SharedPrefKeys {
   static const String userToken = "userToken";
 }
