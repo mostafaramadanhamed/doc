@@ -5,11 +5,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/helpers/spacing_extension.dart';
 import '../../logic/home_cubit.dart';
 import '../../logic/home_state.dart';
-import 'doctor_specialty_list_view.dart';
+import 'specialty_list_view.dart';
 import 'doctors_list_view.dart';
 
-class SpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
-  const SpecializationsAndDoctorsBlocBuilder({super.key});
+class SpecializationsBlocBuilder extends StatelessWidget {
+  const SpecializationsBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,9 @@ class SpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
           current is SpecializationsLoading,
       builder: (context, state) {
         return state.maybeWhen(specializationsLoading: ()=> setupLoading(), 
-        specializationsSuccess: (specializationResponseModel) {
+        specializationsSuccess: (specializationDataList) {
           var specializationsList =
-              specializationResponseModel.specializationDataList;
+              specializationDataList;
           return setupSuccess(specializationsList);
         }, specializationsError: (errorHandler)=> setupError(),
          orElse: () {
