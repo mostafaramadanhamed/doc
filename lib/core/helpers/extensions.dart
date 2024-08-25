@@ -24,3 +24,9 @@ extension StringExtension on String? {
     return this == null || this=='';
   }
 }
+
+extension ListExtension<T> on List<T>? {
+  bool isNullOrEmpty() {
+    return this == null || this!.isEmpty;
+  }
+}
