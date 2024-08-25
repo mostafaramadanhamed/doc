@@ -22,31 +22,28 @@ class DoctorsListViewItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 16.h),
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12.0),
-            child: CachedNetworkImage(
-              width: 110.w,
-              height: 120.h,
-              imageUrl:
-                  doctorsModel!.photo ?? 'https://via.placeholder.com/150',
-              fit: BoxFit.cover,
-              progressIndicatorBuilder: (context, url, downloadProgress) {
-                return Shimmer.fromColors(
-                  baseColor: ColorsManager.lightGray,
-                  highlightColor: Colors.white,
-                  child: Container(
-                    width: 110.w,
-                    height: 120.h,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(12.0),
-                      color: Colors.white,
-                    ),
+          CachedNetworkImage(
+            width: 110.w,
+            height: 120.h,
+            imageUrl:
+                doctorsModel!.photo ?? 'https://via.placeholder.com/150',
+            fit: BoxFit.cover,
+            progressIndicatorBuilder: (context, url, downloadProgress) {
+              return Shimmer.fromColors(
+                baseColor: ColorsManager.lightGray,
+                highlightColor: Colors.white,
+                child: Container(
+                  width: 110.w,
+                  height: 120.h,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: Colors.white,
                   ),
-                );
-              },
-              errorWidget: (context, url, error) => const Icon(Icons.error),
-            ),
+                ),
+              );
+            },
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
           // ClipRRect(
           //   borderRadius: BorderRadius.circular(12.0),
