@@ -26,11 +26,7 @@ class _SpecialityListViewState extends State<SpecialityListView> {
         itemBuilder: (context, index) {
           return GestureDetector(
               onTap: () {
-                setState(() {
-                  selectedSpecializationIndex = index;
-                });
-                context.read<HomeCubit>().getDoctorsList(
-                    specializationId: widget.specializationDataList[index]?.id);
+                setupSpecialityListView(index, context);
               },
               child: SpecialityListViewItem(
                 index: index,
@@ -40,5 +36,13 @@ class _SpecialityListViewState extends State<SpecialityListView> {
         },
       ),
     );
+  }
+
+  void setupSpecialityListView(int index, BuildContext context) {
+     setState(() {
+      selectedSpecializationIndex = index;
+    });
+    context.read<HomeCubit>().getDoctorsList(
+        specializationId: widget.specializationDataList[index]?.id);
   }
 }

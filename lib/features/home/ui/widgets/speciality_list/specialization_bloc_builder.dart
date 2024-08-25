@@ -44,6 +44,7 @@ class SpecializationsBlocBuilder extends StatelessWidget {
     );
   }
 
+/// DoctorsShimmerLoading && SpecialityShimmerLoading
   Widget setupLoading() {
     return  Expanded(
       child:  Column(
