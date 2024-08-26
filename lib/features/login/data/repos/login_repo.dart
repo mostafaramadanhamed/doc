@@ -5,17 +5,17 @@ import 'package:doc/features/login/data/models/login_response.dart';
 
 import '../../../../core/networking/api_result.dart';
 
-class LoginRepo{
+class LoginRepo {
   final ApiService _apiService;
-LoginRepo(this._apiService);
+  LoginRepo(this._apiService);
 
-Future<ApiResult<LoginResponse>>login (LoginRequestBody loginRequestBody)async {
-  try{
-    final response= await _apiService.login(loginRequestBody);
+  Future<ApiResult<LoginResponse>> login(
+      LoginRequestBody loginRequestBody) async {
+    try {
+      final response = await _apiService.login(loginRequestBody);
       return ApiResult.success(response);
-  }
-    catch(error){
-    return ApiResult.failure(ErrorHandler.handle(error));
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 }

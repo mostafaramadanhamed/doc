@@ -17,9 +17,9 @@ class HomeCubit extends Cubit<HomeState> {
     response.when(
       success: (specializationResponseModel) {
         specializationsList =
-            specializationResponseModel.specializationDataList ??[];
-            
-            getDoctorsList(specializationId: specializationsList?.first?.id); 
+            specializationResponseModel.specializationDataList ?? [];
+
+        getDoctorsList(specializationId: specializationsList?.first?.id);
         emit(HomeState.specializationsSuccess(specializationsList));
       },
       failure: (errorHandler) =>
@@ -33,17 +33,17 @@ class HomeCubit extends Cubit<HomeState> {
     List<Doctors?>? doctorsList =
         getDoctorsListBySpecializationId(specializationId);
 
-        if (! doctorsList.isNullOrEmpty()) { 
-          emit(HomeState.doctorsSuccess(doctorsList));
-        }
-        else {
-          emit(HomeState.doctorsError(ErrorHandler.handle('No doctors found')));
-        }
+    if (!doctorsList.isNullOrEmpty()) {
+      emit(HomeState.doctorsSuccess(doctorsList));
+    } else {
+      emit(HomeState.doctorsError(ApiErrorHandler.handle('No doctors found')));
+    }
   }
 
   /// return [doctorsList] based on [specializationId]
   getDoctorsListBySpecializationId(specializationId) {
-    return specializationsList?.firstWhere(
-        (specialization) => specialization?.id == specializationId)?.doctorsList;
+    return specializationsList
+        ?.firstWhere((specialization) => specialization?.id == specializationId)
+        ?.doctorsList;
   }
 }

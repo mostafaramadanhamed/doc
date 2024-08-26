@@ -10,13 +10,11 @@ class HomeRepo {
   HomeRepo(this._homeApiService);
 
   Future<ApiResult<SpecializationResponseModel>> getSpecializations() async {
-   try {
-    final response = await _homeApiService.getSpecializations();
-    return ApiResult.success(response);
-   } catch (error) {
-    return ApiResult.failure(ErrorHandler.handle(error));
-   }
+    try {
+      final response = await _homeApiService.getSpecializations();
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error));
+    }
   }
-
-
 }
