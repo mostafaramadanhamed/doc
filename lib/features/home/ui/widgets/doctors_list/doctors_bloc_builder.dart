@@ -14,7 +14,7 @@ class DoctorsBlocBuilder extends StatelessWidget {
     buildWhen: (previous, current) => current is DoctorsSuccess || current is DoctorsError ,
     builder: (context, state) {
       return state.maybeWhen(
-        doctorsError: (errorHandler) => setupError(),
+        doctorsError: () => setupError(),
         doctorsSuccess: (doctorsList) => setupSuccess(doctorsList),
         orElse: () => setupError(),
       );
