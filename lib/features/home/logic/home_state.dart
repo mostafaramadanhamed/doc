@@ -1,4 +1,3 @@
-import 'package:doc/core/networking/api_error_handler.dart';
 import 'package:doc/core/networking/api_error_model.dart';
 import 'package:doc/features/home/data/models/specialization_response_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

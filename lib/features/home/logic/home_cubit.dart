@@ -1,5 +1,4 @@
 import 'package:doc/core/helpers/extensions.dart';
-import 'package:doc/core/networking/api_error_handler.dart';
 import 'package:doc/features/home/data/models/specialization_response_model.dart';
 import 'package:doc/features/home/data/repos/home_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,7 +35,7 @@ class HomeCubit extends Cubit<HomeState> {
     if (!doctorsList.isNullOrEmpty()) {
       emit(HomeState.doctorsSuccess(doctorsList));
     } else {
-      emit(HomeState.doctorsError());
+      emit(const HomeState.doctorsError());
     }
   }
 

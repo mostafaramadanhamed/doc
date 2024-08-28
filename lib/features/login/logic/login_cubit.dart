@@ -1,5 +1,4 @@
 import 'package:doc/core/helpers/shared_pref_helper.dart';
-import 'package:doc/core/networking/api_error_handler.dart';
 import 'package:doc/core/networking/dio_factory.dart';
 import 'package:doc/features/login/data/models/login_request_body.dart';
 import 'package:flutter/cupertino.dart';

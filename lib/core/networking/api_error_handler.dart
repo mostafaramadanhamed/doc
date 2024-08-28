@@ -36,7 +36,7 @@ class ApiErrorHandler  {
 ApiErrorModel _handleError( dynamic error) {
   return ApiErrorModel(
     message: error['message'] ?? 'Something went wrong, Try again',
-    errors: error['errors'],
+    errors: error['data'],
     code: error['code'] ,
   );
 }
